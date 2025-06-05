@@ -602,7 +602,8 @@ var GeotabApi = function (getCredentialsCallback, newOptions, customCredentialSt
         abort: calls.abort,
         forget: forget,
         getSession: getSession,
-        setDefaultHandlers: setDefaultHandlers
+        setDefaultHandlers: setDefaultHandlers,
+        databaseName: () => credentials ? credentials.database : null
     };
 };
 
