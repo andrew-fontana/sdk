@@ -115,7 +115,7 @@ export default function ApiRunnerCore() {
             const iframe = document.createElement("iframe");
             iframe.src = "codebase/iframe.html";
             iframe.className = "output";
-            iframe.setAttribute("sandbox", "allow-scripts");
+            iframe.setAttribute("sandbox", "allow-scripts allow-same-origin");
             container.appendChild(iframe);
             return iframe;
         };
@@ -220,7 +220,7 @@ export default function ApiRunnerCore() {
                 }, false);
             },
             process = value => {
-                value.iframe.setAttribute("sandbox", "allow-scripts");
+                value.iframe.setAttribute("sandbox", "allow-scripts allow-same-origin");
                 return value;
             };
         return {
